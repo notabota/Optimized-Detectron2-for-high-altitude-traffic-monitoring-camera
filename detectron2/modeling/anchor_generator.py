@@ -178,7 +178,7 @@ class DefaultAnchorGenerator(nn.Module):
 
         return anchors
 
-    def generate_cell_anchors(self, sizes=(18, 25, 45, 68), aspect_ratios=(0.625, 0.8, 1.2, 1.6)):
+    def generate_cell_anchors(self, sizes=(32, 64, 128, 256, 512), aspect_ratios=(0.5, 1, 2)):
         """
         Generate a tensor storing canonical anchor boxes, which are all anchor
         boxes of different sizes and aspect_ratios centered at (0, 0).
