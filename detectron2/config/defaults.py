@@ -183,7 +183,7 @@ _C.MODEL.ANCHOR_GENERATOR.SIZES = [[12, 25, 45, 68]]
 # to use for IN_FEATURES[i]; len(ASPECT_RATIOS) == len(IN_FEATURES) must be true,
 # or len(ASPECT_RATIOS) == 1 is true and aspect ratio list ASPECT_RATIOS[0] is used
 # for all IN_FEATURES.
-_C.MODEL.ANCHOR_GENERATOR.ASPECT_RATIOS = [[0.625, 0.8, 1.2, 1.6]]
+_C.MODEL.ANCHOR_GENERATOR.ASPECT_RATIOS = [[0.4, 0.625, 0.8, 1.2, 1.6, 2.5]]
 # Anchor angles.
 # list[list[float]], the angle in degrees, for each input feature map.
 # ANGLES[i] specifies the list of angles for IN_FEATURES[i].
