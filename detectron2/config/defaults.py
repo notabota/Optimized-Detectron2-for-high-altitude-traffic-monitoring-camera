@@ -53,12 +53,12 @@ _C.INPUT = CN()
 # By default, {MIN,MAX}_SIZE options are used in transforms.ResizeShortestEdge.
 # Please refer to ResizeShortestEdge for detailed definition.
 # Size of the smallest side of the image during training
-_C.INPUT.MIN_SIZE_TRAIN = (800,)
+_C.INPUT.MIN_SIZE_TRAIN = (1080,)
 # Sample size of smallest side by choice or random selection from range give by
 # INPUT.MIN_SIZE_TRAIN
 _C.INPUT.MIN_SIZE_TRAIN_SAMPLING = "choice"
 # Maximum size of the side of the image during training
-_C.INPUT.MAX_SIZE_TRAIN = 1333
+_C.INPUT.MAX_SIZE_TRAIN = 1920
 # Size of the smallest side of the image during testing. Set to zero to disable resize in testing.
 _C.INPUT.MIN_SIZE_TEST = 0
 # _C.INPUT.MIN_SIZE_TEST = 800
@@ -66,7 +66,7 @@ _C.INPUT.MIN_SIZE_TEST = 0
 _C.INPUT.MAX_SIZE_TEST = 1333
 # Mode for flipping images used in data augmentation during training
 # choose one of ["horizontal, "vertical", "none"]
-_C.INPUT.RANDOM_FLIP = "horizontal"
+_C.INPUT.RANDOM_FLIP = "none"
 
 # `True` if cropping is used for data augmentation during training
 _C.INPUT.CROP = CN({"ENABLED": False})
@@ -146,7 +146,7 @@ _C.MODEL.FPN = CN()
 # They must have contiguous power of 2 strides
 # e.g., ["res2", "res3", "res4", "res5"]
 _C.MODEL.FPN.IN_FEATURES = []
-_C.MODEL.FPN.OUT_CHANNELS = 256
+_C.MODEL.FPN.OUT_CHANNELS = 1024
 
 # Options: "" (no norm), "GN"
 _C.MODEL.FPN.NORM = ""
@@ -409,7 +409,7 @@ _C.MODEL.SEM_SEG_HEAD.NUM_CLASSES = 54
 # Number of channels in the 3x3 convs inside semantic-FPN heads.
 _C.MODEL.SEM_SEG_HEAD.CONVS_DIM = 128
 # Outputs from semantic-FPN heads are up-scaled to the COMMON_STRIDE stride.
-_C.MODEL.SEM_SEG_HEAD.COMMON_STRIDE = 4
+_C.MODEL.SEM_SEG_HEAD.COMMON_STRIDE = 2
 # Normalization method for the convolution layers. Options: "" (no norm), "GN".
 _C.MODEL.SEM_SEG_HEAD.NORM = "GN"
 _C.MODEL.SEM_SEG_HEAD.LOSS_WEIGHT = 1.0
