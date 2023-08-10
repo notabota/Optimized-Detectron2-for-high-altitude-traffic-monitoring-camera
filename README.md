@@ -1,68 +1,226 @@
-<img src=".github/Detectron2-Logo-Horz.svg" width="300" >
+<!-- Improved compatibility of back to top link: See: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/pull/73 -->
 
-<a href="https://opensource.facebook.com/support-ukraine">
-  <img src="https://img.shields.io/badge/Support-Ukraine-FFD500?style=flat&labelColor=005BBB" alt="Support Ukraine - Help Provide Humanitarian Aid to Ukraine." />
-</a>
+<a name="readme-top"></a>
 
-Detectron2 is Facebook AI Research's next generation library
-that provides state-of-the-art detection and segmentation algorithms.
-It is the successor of
-[Detectron](https://github.com/facebookresearch/Detectron/)
-and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark/).
-It supports a number of computer vision research projects and production applications in Facebook.
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
+<!-- PROJECT SHIELDS -->
+
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- PROJECT LOGO -->
+
+<br />
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/1381301/66535560-d3422200-eace-11e9-9123-5535d469db19.png"/>
+  <!-- <a href="https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a> -->
+
+<h3 align="center">Optimized Detectron2 for high altitude traffic monitoring camera
+</h3>
+
+<p align="center">
+    A modified Detectron model and hyperparameter to optimize for the use of object detection using high-altitud camera
+    <!-- <br />
+    <a href="https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera"><strong>Explore the docs »</strong></a> -->
+    <br />
+    <br />
+    <a href="https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera">View Demo</a>
+    ·
+    <a href="https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/issues">Request Feature</a>
+  </p>
 </div>
-<br>
 
-## Learn More about Detectron2
+<!-- TABLE OF CONTENTS -->
 
-Explain Like I’m 5: Detectron2            |  Using Machine Learning with Detectron2
-:-------------------------:|:-------------------------:
-[![Explain Like I’m 5: Detectron2](https://img.youtube.com/vi/1oq1Ye7dFqc/0.jpg)](https://www.youtube.com/watch?v=1oq1Ye7dFqc)  |  [![Using Machine Learning with Detectron2](https://img.youtube.com/vi/eUSgtfK4ivk/0.jpg)](https://www.youtube.com/watch?v=eUSgtfK4ivk)
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#details">Details</a>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <!-- <li><a href="#license">License</a></li> -->
+    <li><a href="#contact">Contact</a></li>
+    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+  </ol>
+</details>
 
-## What's New
-* Includes new capabilities such as panoptic segmentation, Densepose, Cascade R-CNN, rotated bounding boxes, PointRend,
-  DeepLab, ViTDet, MViTv2 etc.
-* Used as a library to support building [research projects](projects/) on top of it.
-* Models can be exported to TorchScript format or Caffe2 format for deployment.
-* It [trains much faster](https://detectron2.readthedocs.io/notes/benchmarks.html).
+<!-- ABOUT THE PROJECT -->
 
-See our [blog post](https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/)
-to see more demos and learn about detectron2.
+## About The Project
 
-## Installation
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-See [installation instructions](https://detectron2.readthedocs.io/tutorials/install.html).
+This project is built specifically for the use of object panoptic segmentation on cameras that are low resolution and have to capture a wide area where vehicles are small-scale compared to the video resolution.
 
-## Getting Started
+<!-- Use the `BLANK_README.md` to get started. -->
 
-See [Getting Started with Detectron2](https://detectron2.readthedocs.io/tutorials/getting_started.html),
-and the [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
-to learn about basic usage.
+<p style="text-align: right;"><a href="#readme-top">back to top</a></p>
 
-Learn more at our [documentation](https://detectron2.readthedocs.org).
-And see [projects/](projects/) for some projects that are built on top of detectron2.
+<!-- DETAILS -->
 
-## Model Zoo and Baselines
+## Details
 
-We provide a large set of baseline results and trained models available for download in the [Detectron2 Model Zoo](MODEL_ZOO.md).
+#### Specifications of the camera
 
-## License
+Due to the position of the camera, its image outputs have some special properties compared to standard object detection algorithm:
+* The objects are too small and in low resolution.
+* Vehicles are ofter crowded and merge into each other, which is indistinguishable.
+* Since the traffic network and the camera postion is static, it's inefficient to perform Detectron on unrelated location on the images. Unfortunately, when capturing from above, most of the scene being captured can be considered background.
+* The environment are unstable with frequently changing brightness, lighting and shadow, blurness, weather condition,...
 
-Detectron2 is released under the [Apache 2.0 license](LICENSE).
+#### How is that correlated with Detectron
 
-## Citing Detectron2
+* Small and low resolution object resulted in small feature map that render the convolution network nearly unsuable. 
+* The default anchor boxes and ground truth is also too sizeable compared to the objects.
+* The convolutional stride is too large to be able to capture the vehicles
+* While already being low quality, Detectron auto resize the images to speedup the process. In this case, the precision and accuracy is more important.
+* While this is not really a change of the Detectron, we also tell the model to not take an unnecessary interest into constant background area.
 
-If you use Detectron2 in your research or wish to refer to the baseline results published in the [Model Zoo](MODEL_ZOO.md), please use the following BibTeX entry.
+<p style="text-align: right;"><a href="#readme-top">back to top</a></p>
 
-```BibTeX
-@misc{wu2019detectron2,
-  author =       {Yuxin Wu and Alexander Kirillov and Francisco Massa and
-                  Wan-Yen Lo and Ross Girshick},
-  title =        {Detectron2},
-  howpublished = {\url{https://github.com/facebookresearch/detectron2}},
-  year =         {2019}
-}
-```
+<!-- ROADMAP -->
+
+## Roadmap
+
+See the [open issues](https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/issues) for a full list of proposed features (and known issues).
+
+<p style="text-align: right;"><a href="#readme-top">back to top</a></p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
+contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also
+simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p style="text-align: right;"><a href="#readme-top">back to top</a></p>
+
+[//]: # (<!-- LICENSE -->)
+
+[//]: # (## License)
+
+[//]: # ()
+
+[//]: # (<p style="text-align: right;"><a href="#readme-top">back to top</a></p>)
+
+[//]: # ()
+
+[//]: # (<!-- CONTACT -->)
+
+## Contact
+
+Nguyễn Nguyên Vũ
+
+* [![Gmail][gmail]]() - **nnv2205owo@gmail.com**
+* [![Facebook][facebook]](https://www.facebook.com/nnv2205owo/) - **facebook.com/nnv2205owo**
+* [![LinkedIn][linkedin]](https://www.linkedin.com/in/nnv2205owo/) - **linkedin.com/in/nnv2205owo**
+* [![Upwork][upwork]](https://www.upwork.com/freelancers/~012078434f80806fe1) - **upwork.com/freelancers/~
+  012078434f80806fe1**
+
+Project Link: [https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera](https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera)
+
+<p style="text-align: right;"><a href="#readme-top">back to top</a></p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+[//]: # (## Acknowledgments)
+
+[//]: # ()
+
+[//]: # (Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites)
+
+[//]: # (to kick things off!)
+
+[//]: # ()
+
+[//]: # (* [Choose an Open Source License]&#40;https://choosealicense.com&#41;)
+
+[//]: # (* [GitHub Emoji Cheat Sheet]&#40;https://www.webpagefx.com/tools/emoji-cheat-sheet&#41;)
+
+[//]: # (* [Malven's Flexbox Cheatsheet]&#40;https://flexbox.malven.co/&#41;)
+
+[//]: # (* [Malven's Grid Cheatsheet]&#40;https://grid.malven.co/&#41;)
+
+[//]: # (* [Img Shields]&#40;https://shields.io&#41;)
+
+[//]: # (* [GitHub Pages]&#40;https://pages.github.com&#41;)
+
+[//]: # (* [Font Awesome]&#40;https://fontawesome.com&#41;)
+
+[//]: # (* [React Icons]&#40;https://react-icons.github.io/react-icons/search&#41;)
+
+[//]: # (<p style="text-align: right;"><a href="#readme-top">back to top</a></p>)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[Firebase]: https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase
+
+[Firebase-url]: https://firebase.google.com/
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[contributors-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[forks-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[stars-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[issues-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/issues
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[license-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/blob/master/LICENSE.txt
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
+[linkedin-url]: https://linkedin.com/in/nnv2205owo
+
+[facebook]: https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white
+
+[gmail]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+
+[linkedin]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+
+[upwork]: https://img.shields.io/badge/UpWork-6FDA44?style=for-the-badge&logo=Upwork&logoColor=white
