@@ -5,9 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<!-- PROJECT LOGO -->
 
 <br />
 <div align="center">
@@ -42,9 +39,7 @@
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <!-- <li><a href="#license">License</a></li> -->
     <li><a href="#contact">Contact</a></li>
-    <!-- <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -52,11 +47,7 @@
 
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
 This project is built specifically for the use of object panoptic segmentation on cameras that are low resolution and have to capture a wide area where vehicles are small-scale compared to the video resolution.
-
-<!-- Use the `BLANK_README.md` to get started. -->
 
 <p style="text-align: right;"><a href="#readme-top">back to top</a></p>
 
@@ -108,18 +99,6 @@ simply open an issue with the tag "enhancement".
 
 <p style="text-align: right;"><a href="#readme-top">back to top</a></p>
 
-[//]: # (<!-- LICENSE -->)
-
-[//]: # (## License)
-
-[//]: # ()
-
-[//]: # (<p style="text-align: right;"><a href="#readme-top">back to top</a></p>)
-
-[//]: # ()
-
-[//]: # (<!-- CONTACT -->)
-
 ## Contact
 
 Nguyễn Nguyên Vũ
@@ -134,59 +113,29 @@ Project Link: [https://github.com/notabota/Optimized-Detectron2-for-high-altitud
 
 <p style="text-align: right;"><a href="#readme-top">back to top</a></p>
 
-<!-- ACKNOWLEDGMENTS -->
-
-[//]: # (## Acknowledgments)
-
-[//]: # ()
-
-[//]: # (Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites)
-
-[//]: # (to kick things off!)
-
-[//]: # ()
-
-[//]: # (* [Choose an Open Source License]&#40;https://choosealicense.com&#41;)
-
-[//]: # (* [GitHub Emoji Cheat Sheet]&#40;https://www.webpagefx.com/tools/emoji-cheat-sheet&#41;)
-
-[//]: # (* [Malven's Flexbox Cheatsheet]&#40;https://flexbox.malven.co/&#41;)
-
-[//]: # (* [Malven's Grid Cheatsheet]&#40;https://grid.malven.co/&#41;)
-
-[//]: # (* [Img Shields]&#40;https://shields.io&#41;)
-
-[//]: # (* [GitHub Pages]&#40;https://pages.github.com&#41;)
-
-[//]: # (* [Font Awesome]&#40;https://fontawesome.com&#41;)
-
-[//]: # (* [React Icons]&#40;https://react-icons.github.io/react-icons/search&#41;)
-
-[//]: # (<p style="text-align: right;"><a href="#readme-top">back to top</a></p>)
-
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [Firebase]: https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase
 
 [Firebase-url]: https://firebase.google.com/
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera.svg?style=for-the-badge
 
 [contributors-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera.svg?style=for-the-badge
 
 [forks-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera.svg?style=for-the-badge
 
 [stars-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera.svg?style=for-the-badge
 
 [issues-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/issues
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera.svg?style=for-the-badge
 
 [license-url]: https://github.com/notabota/Optimized-Detectron2-for-high-altitude-traffic-monitoring-camera/blob/master/LICENSE.txt
 
